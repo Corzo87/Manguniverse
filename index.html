@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Manguniverse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Section utilisateur avec boutons de connexion/inscription -->
+    <div class="user-section" id="user-section">
+        <!-- Contenu dynamique ici -->
+    </div>
+
+    <!-- Contenu principal de la page d'accueil -->
+    <header>
+        <h1>Bienvenue sur Manguniverse</h1>
+    </header>
+
+    <script src="auth.js"></script>
+    <script>
+        // Vérifie l'état de connexion de l'utilisateur
+        document.addEventListener("DOMContentLoaded", function() {
+            const userSection = document.getElementById("user-section");
+            const currentUser = localStorage.getItem("currentUser");
+
+            if (currentUser) {
+                // Affiche un message de bienvenue et un bouton de déconnexion
+                userSection.innerHTML = `
+                    <p>Bienvenue, ${currentUser}!</p>
+                    <button onclick="logout()">Se déconnecter</button>
+                `;
+            } else {
+                // Affiche les boutons de connexion et d'inscription
+                userSection.innerHTML = `
+                    <a href="login.html" class="user-button">Se connecter</a>
+                    <a href="register.html" class="user-button">S'inscrire</a>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manguniverse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header class="header">
+        <h1>Manguniverse</h1>
+        <p>Bienvenue dans l'univers des animés !</p>
+		<!-- En-tête de la page avec le logo en haut à gauche -->
+<header class="page-header">
+    <a href="index.html" class="logo-link">
+        <img src="Logo2.png" alt="Logo du site" class="site-logo">
+    </a>
+</header>
+
+</header>
+
+    </header>
+
+<!-- Barre de recherche améliorée -->
+<section class="search-bar">
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search" placeholder="Rechercher un manga..." oninput="showResults(this.value)">
+    </div>
+    <div class="search-results" id="search-results"></div> <!-- Section pour les résultats -->
+</section>
+
+
+
+    <!-- Section principale avec catégories -->
+    <main>
+        <!-- Catégorie À voir -->
+        <section class="category-section">
+            <h2>À voir</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="scrollCarousel('a-voir', -1)">❮</button>
+                <div class="carousel" id="a-voir">
+                    <a href="naruto.html" class="manga-card">
+                        <img src="naruto.png" alt="Image du manga" class="manga-image">
+                        <h3>Naruto</h3>
+                        <p>Un bref aperçu de ce manga qui est sur ta liste à voir.</p>
+                    </a>
+                    <!-- Ajoute plus de cartes ici pour cette catégorie -->
+                </div>
+                <button class="carousel-btn next" onclick="scrollCarousel('a-voir', 1)">❯</button>
+            </div>
+        </section>
+
+        <!-- Catégorie En cours -->
+        <section class="category-section">
+            <h2>En cours</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="scrollCarousel('en-cours', -1)">❮</button>
+                <div class="carousel" id="en-cours">
+                    <a href="page-manga2.html" class="manga-card">
+                        <img src="lien-vers-image2.jpg" alt="Image du manga" class="manga-image">
+                        <h3>Titre du Manga 2</h3>
+                        <p>Aperçu d'un manga que tu es en train de regarder.</p>
+                    </a>
+                    <!-- Ajoute plus de cartes ici pour cette catégorie -->
+                </div>
+                <button class="carousel-btn next" onclick="scrollCarousel('en-cours', 1)">❯</button>
+            </div>
+        </section>
+
+        <!-- Catégorie Terminé -->
+        <section class="category-section">
+            <h2>Terminé</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="scrollCarousel('termine', -1)">❮</button>
+                <div class="carousel" id="termine">
+                    <a href="naruto.html" class="manga-card">
+                        <img src="naruto.png" alt="Image du manga" class="manga-image">
+                        <h3>Naruto</h3>
+                        <p>ナルト</p>
+                    </a>
+                    <!-- Ajoute plus de cartes ici pour cette catégorie -->
+                </div>
+                <button class="carousel-btn next" onclick="scrollCarousel('termine', 1)">❯</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer">
+        <p>&copy; 2024 Manguniverse. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

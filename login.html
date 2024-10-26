@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Connexion</h2>
+        <form id="login-form" onsubmit="loginUser(event)">
+            <label for="login-username">Nom d'utilisateur</label>
+            <input type="text" id="login-username" required>
+
+            <label for="login-password">Mot de passe</label>
+            <input type="password" id="login-password" required>
+
+            <button type="submit">Se connecter</button>
+            <p>Pas encore inscrit ? <a href="register.html">Inscrivez-vous ici</a></p>
+        </form>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>

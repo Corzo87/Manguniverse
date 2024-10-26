@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation de Naruto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- En-tête de la page -->
+    <header class="manga-header">
+        <h1>Naruto</h1>
+		<!-- Bouton Accueil pour revenir à la page principale -->
+<a href="index.html" class="home-button">Accueil</a>
+<!-- Barre de recherche -->
+<section class="search-bar">
+    <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search" placeholder="Rechercher un manga..." oninput="showResults(this.value)">
+    </div>
+    <div class="search-results" id="search-results"></div> <!-- Section pour les résultats -->
+</section>
+<!-- En-tête de la page avec le logo en haut à gauche -->
+<header class="page-header">
+    <a href="index.html" class="logo-link">
+        <img src="Logo2.png" alt="Logo du site" class="site-logo">
+    </a>
+</header>
+
+    </header>
+
+    <!-- Section principale avec image et description -->
+    <main class="manga-main">
+        <!-- Image de couverture du manga -->
+        <div class="cover-section">
+            <img src="naruto.png" alt="Couverture de Naruto" class="manga-cover">
+        </div>
+
+        <!-- Description et informations du manga -->
+        <div class="info-section">
+            <h2>Description</h2>
+            <p>Naruto Uzumaki est un jeune ninja plein d'ambition qui rêve de devenir Hokage, le chef de son village. Il porte en lui le démon-renard Kyubi, ce qui fait de lui un personnage unique et très puissant.</p>
+
+            <h2>Informations</h2>
+            <ul>
+                <li><strong>Auteur :</strong> Masashi Kishimoto</li>
+                <li><strong>Genre :</strong> Action, Aventure, Fantasy</li>
+                <li><strong>Épisodes :</strong> 220</li>
+                <li><strong>Date de sortie :</strong> 2002</li>
+            </ul>
+
+            <!-- Boutons pour regarder la bande-annonce ou en savoir plus -->
+			<div class="button-group">
+				<a href="naruto-trailer.html" class="btn">Voir la Bande-Annonce</a>
+				<a href="#" class="btn">Lire Plus</a>
+			</div>
+
+        </div>
+    </main>
+
+<!-- Section pour la soumission d'avis -->
+<section class="submit-review-section">
+    <h2>Votre Note et Avis</h2>
+
+    <!-- Section de notation en étoiles -->
+    <div class="rating" aria-label="Notez le manga">
+        <span data-value="1" onclick="rateManga(1)"></span>
+        <span data-value="1.5" onclick="rateManga(1.5)"></span>
+        <span data-value="2" onclick="rateManga(2)"></span>
+        <span data-value="2.5" onclick="rateManga(2.5)"></span>
+        <span data-value="3" onclick="rateManga(3)"></span>
+        <span data-value="3.5" onclick="rateManga(3.5)"></span>
+        <span data-value="4" onclick="rateManga(4)"></span>
+        <span data-value="4.5" onclick="rateManga(4.5)"></span>
+        <span data-value="5" onclick="rateManga(5)"></span>
+    </div>
+    <p id="rating-value">Note : 0 / 5</p>
+
+    <!-- Champ de texte pour l'avis -->
+    <textarea id="review-text" placeholder="Partagez votre avis ici..."></textarea>
+    
+    <!-- Bouton de soumission stylisé -->
+    <button onclick="submitReview()" class="submit-button">Soumettre l'avis</button>
+</section>
+
+
+
+    <!-- Pied de page -->
+    <footer class="manga-footer">
+        <p>&copy; 2024 Manguniverse. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
+<script src="script.js"></script>
